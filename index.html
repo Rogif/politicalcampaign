@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>קמפיין פוליטי</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #cover {
+      width: 100%;
+      height: 400px;
+      /* Increased height */
+      background-image: url('bibiheader.png');
+      background-size: contain;
+      /* Changed to 'contain' to ensure the image is fully visible */
+      background-position: center;
+      background-repeat: no-repeat;
+      /* Add this to prevent the image from repeating */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 36px;
+      text-align: center;
+      background-color: #000;
+      /* Optional: Change to match your image's edge color */
+    }
+
+    #content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      direction: ltr;
+    }
+
+    #video {
+      width: 100%;
+      /* Adjusts the width to the container's width */
+      padding-top: 56.25%;
+      /* Maintains a 16:9 aspect ratio */
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    #video video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 5px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cover">
+  </div>
+
+  <div id="content">
+    <p>Benjamin Netanyahu, former Prime Minister of Israel, acknowledges his past mistakes and is ready to lead the USA
+      with newfound wisdom. Our campaign focuses on accountability, transparency, and progress. Netanyahu’s unique
+      perspective and commitment to transformative change can build a stronger, more prosperous America. Join us in
+      supporting a leader who learns from the past to create a better future.</p>
+    <div id="video">
+      <video src="0701.mp4" controls></video>
+    </div>
+
+    <div id="modelname">
+      <h2>Models that was used</h2>
+      <a href="https://huggingface.co/spaces/tonyassi/voice-clone">Text to voice</a>
+      <a href="https://replicate.com/devxpy/cog-wav2lip?prediction=51ws5smfzsrj60cgdvj8v8eh1g">Lip-Sync</a>
+    </div>
+  </div>
+
+  <!-- Invisible paragraph for scrolling -->
+  <p style="height: 500px; opacity: 0;"></p>
+
+  <footer>
+    <p>© 2024 Vote BIBI .</p>
+  </footer>
+
+  <script>
+    function setup() {
+      let canvas = createCanvas(400, 200);
+      canvas.parent('cover');
+    }
+
+
+  </script>
+</body>
+
+</html>
